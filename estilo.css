@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background: white;
+  padding: 16px;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ÁREA EXTERNA DA PÁGINA */
+.pagina {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  border: 2px dashed #00df96;
+  border-radius: 12px;
+
+  padding: 10px;
+}
+
+/* CABEÇALHO */
+
+.topo {
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid #0b3227;
+  border-radius: 8px;
+
+  padding: 0 15px;
+
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  background: #00df96;
+
+  border: 2px solid #0b3227;
+  border-radius: 7px;
+
+  padding: 5px 13px;
+
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: #00c982;
+}
+
+/* ÁREA DOS CARDS */
+
+.area-cards {
+  margin-top: 10px;
+
+  border: 2px solid #0b3227;
+  border-radius: 8px;
+
+  padding: 14px;
+
+  display: flex;
+  gap: 16px;
+
+  align-items: center;
+}
+
+.card {
+  height: 47px;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #0b3227;
+  border-radius: 7px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  background: white;
+}
+
+.card.destaque {
+  flex: 1.35;
+  background: #00df96;
+}
+
+/*ÁREA PRINCIPAL */
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo {
+  height: 200px;
+
+  margin-top: 10px;
+
+  border: 2px solid #0b3227;
+  border-radius: 8px;
+
+  background: white;
+}
+
+/* RODAPÉ */
+
+footer {
+  height: 52px;
+
+  margin-top: 10px;
+
+  border: 2px solid #0b3227;
+  border-radius: 8px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 18px;
+}
+
+.links a {
+  color: #111;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/*INVESTIGAÇÃO (RESPOSTAS) */
+
+/*
+  RESPOSTAS DA PARTE 3 - INVESTIGAÇÃO:
+
+  1. Qual é o eixo principal do .topo e qual é o do body? Por que eles são diferentes?
+     R: O eixo principal do .topo é horizontal (row, padrão do flex), enquanto o do body é vertical (column).
+        Eles são diferentes porque no .topo os elementos (logo e navegação) precisam ficar lado a lado na horizontal,
+        enquanto no body a estrutura dos blocos principais (cabeçalho, conteúdo e rodapé) precisa ficar empilhada na vertical.
+
+  2. Por que flex: 1 1 288px dá um resultado diferente de width: 288px nos cards?
+     R: A propriedade width estabelece uma largura fixa e rígida. Já flex: 1 1 288px define o tamanho base em 288px (flex-basis),
+        mas permite que o elemento tanto cresça (flex-grow: 1) quanto encolha (flex-shrink: 1) para preencher o espaço proporcionalmente dentro do container.
+
+  3. O que acontece com a grade se você trocar flex-wrap: wrap por nowrap? Explique em uma frase.
+     R: Com nowrap, os cards são forçados a ficar na mesma linha e encolhem para caber no container sem quebrar para a linha de baixo.
+
+  4. Se o align-items: center do topo for removido, o que muda na tela e por quê?
+     R: Os elementos filhos do .topo esticarão verticalmente para ocupar toda a altura de 56px, pois o valor padrão de align-items é stretch.
+
+  5. Onde, na sua solução, o order pode atrapalhar quem navega por teclado?
+     R: Caso o order reordene elementos visualmente (como mover um botão para frente na tela sem alterar a ordem real no HTML),
+        a navegação por teclado (tecla TAB) continuará seguindo a sequência lógica do código HTML, criando um salto visual desalinhado e confuso.
+*/
